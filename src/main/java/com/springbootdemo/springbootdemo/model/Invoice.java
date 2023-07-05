@@ -1,11 +1,15 @@
 package com.springbootdemo.springbootdemo.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.UUID;
 
+@Table("invoices")
 public class Invoice {
 
+    @Id
     private String id;
 
     @JsonProperty("user_id")

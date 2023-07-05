@@ -18,8 +18,13 @@ public class InvoiceController {
     }
 
     @GetMapping("/invoices")
-    public List<Invoice> findAll() {
+    public Iterable<Invoice> findAll() {
         return invoiceService.findAll();
+    }
+
+    @GetMapping("/invoices/user/{userId}")
+    public Iterable<Invoice> findByUserId(@PathVariable String userId) {
+        return invoiceService.findByUserId(userId);
     }
 
     @PostMapping("/invoices")
